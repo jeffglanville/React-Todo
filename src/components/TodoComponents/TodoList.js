@@ -1,13 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react';
+import Task from '../TodoComponents/Todo';
 
-class TodoList extends Component {
-    render() {
-        return (
-            <div>
-                <h2>Todo List</h2>
-            </div>
-        )
-    }
+const TodoList = props => {
+    return(
+        <div>
+            {props.Task.map(item => {
+                <Task key={item.id} item={item}/>
+            })}
+
+        </div>
+    )
 }
 
 
