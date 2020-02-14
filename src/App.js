@@ -3,7 +3,6 @@ import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
 import Todo from './components/TodoComponents/Todo';
 
-
 const task = [
   {
     task: 'clean the floor',
@@ -24,6 +23,7 @@ const task = [
   },
 
 ]
+
 class App extends React.Component {
   constructor(){
     super();
