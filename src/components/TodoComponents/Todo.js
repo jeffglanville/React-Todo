@@ -1,5 +1,6 @@
 import React from 'react'
-import 
+import TodoForm from './TodoForm';
+import TodoList from './TodoList';
 
 const Task = [
     {
@@ -37,10 +38,40 @@ class Todo extends React.Component {
             Task
         }
     }
+
+    toggleItem = itemId => {
+        this.setState({
+            Task: this.state.task.map(item => {
+                if (itemId === item.id) {
+                    return {
+                        ...item,
+                        complete: !item.complete
+                    };
+                }
+                return item;
+            })
+        });
+    };
+
+    clearComplete = e => {
+        e.preventDefault();
+        this.setState({
+            Task: this.state.groceries.filter(item => item.complete === false)
+        })
+    }
+
+
     render() {
         return (
             <div>
-                
+                <div>
+                    <TodoForm addItem={this.addItem} />
+                </div>
+                <TodoList
+                    Task={this.state.task}
+                    toggleItem={this.toggleItem}
+                    clearComplete={this.ClearComplete}
+                />
             </div>
         )
     }

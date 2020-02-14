@@ -3,18 +3,11 @@ import TodoForm from './components/TodoComponents/TodoForm';
 
 
 class App extends React.Component {
-constructor(){
-  super();
-  this.state = {
-
-  };
-}
-
 
   render() {
     return (
       <div>
-        <h2>Welcome to your Todo App!</h2>
+        <h2>What is on Tap for today?</h2>
         <TodoForm />
       </div>
     );
