@@ -1,5 +1,6 @@
 import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
+import Todo from './components/TodoComponents/Todo';
 
 
 class App extends React.Component {
@@ -9,6 +10,7 @@ class App extends React.Component {
       <div>
         <h2>What is on Tap for today?</h2>
         <TodoForm />
+        <Todo />
       </div>
     );
   }

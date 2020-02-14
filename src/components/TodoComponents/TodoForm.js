@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Formik} from 'formik';
+
 
 class TodoForm extends Component {
     constructor(){
@@ -21,13 +21,12 @@ class TodoForm extends Component {
     render() {
         return (
             <div>
-                <Formik>
+                
                 <form onSubmit = {this.submitTask}>
                     <input type="text" name="task" onChange={this.handleChange} placeholder='add task here'/>
                     <button>Add Todo</button>
-                    <button>Clear Complete</button>
                 </form>
-                </Formik>
+                
             </div>
         )
     }
