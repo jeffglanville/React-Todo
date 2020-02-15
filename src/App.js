@@ -4,13 +4,32 @@ import TodoList from './components/TodoComponents/TodoList';
 import Todo from './components/TodoComponents/Todo';
 
 
+const task = [
+  {
+    task: 'clean the floor',
+      id: Date.now(),
+      complete: false
+  },
 
+  {
+    task: 'wash the car',
+    id: Date.now(),
+    complete: false
+  },
+
+  {
+    task: 'learn from Lambda',
+    id: Date.now(),
+    complete: false
+  },
+
+]
 
 class App extends React.Component {
   constructor(){
     super();
     this.state={
-      task1: "",
+      task
     }
   }
 
@@ -18,7 +37,7 @@ class App extends React.Component {
     e.preventDefault();
 
     const newTodo = {
-      name: todo,
+      task: "",
       id: Date.now(),
       complete: false
     };
