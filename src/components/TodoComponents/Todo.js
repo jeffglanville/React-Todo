@@ -5,7 +5,7 @@ const task = props => {
     return (
         <div
             className={`task${props.task.complete ? "complete" : ""}`}
-            onClick={() => props.toggleTask(props.task.id)}>
+            onClick={() => props.clearComplete(props.task.id)}>
 
             <p>{props.task.name}</p>
 

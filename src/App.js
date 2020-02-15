@@ -80,7 +80,7 @@ class App extends React.Component {
           toggleTask={this.toggleTask}
           clearComplete={this.clearComplete}
           />
-          <Todo />
+          <Todo clearComplete={this.clearComplete}/>
       </div>
     );
   }
