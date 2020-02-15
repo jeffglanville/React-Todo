@@ -1,21 +1,45 @@
 import React from 'react'
 
+const task = [
+    {
+      task: 'clean the floor',
+        id: Date.now(),
+        complete: false
+    },
 
-const Todo = props => {
-    console.log(props);
+    {
+      task: 'wash the car',
+      id: Date.now(),
+      complete: false
+    },
 
-    return (
-        <div
-            // className={`task${props.task.complete ? "complete" : ""}`}
-            onClick={() => props.toggleTask(props.task.id)}
-        >
-            {/* <p>{props.task.name}</p> */}
-        </div>
-    )
+    {
+      task: 'learn from Lambda',
+      id: Date.now(),
+      complete: false
+    },
+
+  ]
+
+
+
+class Todo extends React.Component {
+    constructor(){
+        super();
+        this.state={
+            task
+        }
+    }
+
+    render(props) {
+        return (
+            <div className={`Todo${props.Todo.complete ? "complete" : ""}`}
+                onClick={() => this.props.toggleTodo(props.Todo.id)}
+            >
+            </div>
+        )
+    }
 }
-
-
-
 
 
 export default Todo;

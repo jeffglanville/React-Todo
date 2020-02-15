@@ -1,56 +1,35 @@
 import React from 'react';
-import TodoForm from './components/TodoComponents/TodoForm';
+import TodoForm from './components/TodoComponents/TodoForm'
 import TodoList from './components/TodoComponents/TodoList';
-import Todo from './components/TodoComponents/Todo';
 
-const task = [
-  {
-    task: 'clean the floor',
-      id: Date.now(),
-      complete: false
-  },
 
-  {
-    task: 'wash the car',
-    id: Date.now(),
-    complete: false
-  },
 
-  {
-    task: 'learn from Lambda',
-    id: Date.now(),
-    complete: false
-  },
-
-]
 
 class App extends React.Component {
   constructor(){
     super();
     this.state={
-      task
+      task1: "",
     }
   }
 
-  addTask = (e, task) => {
+  addTask = (e, todo) => {
     e.preventDefault();
 
-    const newTask = {
-      task: '',
+    const newTodo = {
+      name: todo,
       id: Date.now(),
       complete: false
     };
-
     this.setState({
-      task: [...this.state.task, newTask]
+      task: [...this.state.task, newTodo]
     });
   };
 
-
-  toggleTask = taskId => {
+  toggleTask = taskID => {
     this.setState({
-      task: this.state.task.map(item => {
-        if(taskId === task.id) {
+      task: this.state.groceries.map(item => {
+        if (taskID === item.id) {
           return {
             ...item,
             complete: !item.complete
@@ -68,19 +47,19 @@ class App extends React.Component {
     });
   };
 
+
   render() {
     return (
-      <div>
-          <div>
-          <h2>What is on Tap for today?</h2>
-          <TodoForm addTask={this.addTask}/>
-          <TodoList
-            task={this.state.task}
-            toggleTask={this.toggleTask}
-            clearComplete={this.clearComplete}
-            />
-            <Todo />
+      <div className="App">
+          <div className='header'>
+            <h1>ToDo List</h1>
+            <TodoForm addTask={this.addTask} />
           </div>
+          <TodoList
+          task={this.state.task}
+          toggleTask={this.toggleTask}
+          clearComplete={this.clearComplete}
+          />
       </div>
     );
   }
