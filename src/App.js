@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm'
 import TodoList from './components/TodoComponents/TodoList';
+import Todo from './components/TodoComponents/Todo';
 
 
 
@@ -60,6 +61,7 @@ class App extends React.Component {
           toggleTask={this.toggleTask}
           clearComplete={this.clearComplete}
           />
+          <Todo />
       </div>
     );
   }
