@@ -47,7 +47,7 @@ class App extends React.Component {
 
   toggleTask = taskID => {
     this.setState({
-      task: this.state.groceries.map(item => {
+      task: this.state.task.map(item => {
         if (taskID === item.id) {
           return {
             ...item,
@@ -62,7 +62,7 @@ class App extends React.Component {
   clearComplete = e => {
     e.preventDefault();
     this.setState({
-      task: this.state.task.filter(item => item.complete === false)
+      task: this.state.task.filter(task => task.complete === true)
     });
   };
 
