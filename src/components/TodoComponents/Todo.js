@@ -1,10 +1,9 @@
 import React from 'react'
 
 const task = props => {
-console.log(props);
     return (
         <div
-            className={`task${props.task.complete ? "complete" : ""}`}
+            className={props.task.complete ? {textDecoration: 'line-through' } : null}
             onClick={() => props.clearComplete(props.task.id)}>
 
             <p>{props.task.task}</p>
