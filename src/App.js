@@ -63,7 +63,6 @@ class App extends React.Component {
   };
 
   clearComplete = e => {
-    // e.preventDefault();
     this.setState({
       task: this.state.task.filter(task => task.complete === true)
     });
