@@ -1,10 +1,12 @@
 import React from 'react'
+import "./Todo.css";
 
-const task = props => {
+const Task = props => {
     return (
         <div
-            className={props.task.complete ? {textDecoration: 'line-through' } : null}
-            onClick={() => props.clearComplete(props.task.id)}>
+            className={`task${props.task.complete ? " complete " : ""}`}
+            onClick={() => props.clearComplete(props.task.id)}
+        >
 
             <p>{props.task.task}</p>
 
@@ -15,4 +17,4 @@ const task = props => {
 
 
 
-export default task;
+export default Task;

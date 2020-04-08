@@ -22,3 +22,8 @@
     margin: 10px;
     font-size: 55px;
 }
+
+.item.complete {
+    background-color: crimson;
+    text-decoration: line-through;
+}
