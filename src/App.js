@@ -50,15 +50,8 @@ class App extends React.Component {
 
   toggleTask = taskID => {
     this.setState({
-      task: this.state.task.map(item => {
-        if (taskID === item.id) {
-          return {
-            ...item,
-            complete: !item.complete
-          };
-        }
-        return item;
-      })
+      task: this.state.task.map(item =>
+        taskID === item.id ? {...item, complete: !item.complete} : item)
     });
   };
 
