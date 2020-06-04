@@ -48,10 +48,10 @@ class App extends React.Component {
     });
   };
 
-  toggleTask = taskID => {
+  toggleTask = taskId => {
     this.setState({
       task: this.state.task.map(item =>
-        taskID === item.id ? {...item, complete: !item.complete} : item)
+        taskId === item.id ? {...item, complete: !item.complete} : item)
     });
   };
 
@@ -61,12 +61,11 @@ class App extends React.Component {
     });
   };
 
-
   render() {
     return (
       <div className="App">
           <div className='header'>
-          <i class="fas fa-tasks"></i>
+          <i className="fas fa-tasks"></i>
             <h1>To Do List</h1>
           </div>
           <div>

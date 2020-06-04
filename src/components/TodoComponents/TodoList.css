@@ -1,0 +1,4 @@
+.task.complete{
+    background-color: crimson;
+    text-decoration: line-through;
+}
