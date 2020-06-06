@@ -9,19 +9,19 @@ import './App.css';
 const task = [
   {
     task: 'clean the floor',
-      id: Date.now(),
+      id: 1,
       complete: false
   },
 
   {
     task: 'wash the car',
-    id: Date.now(),
+    id: 2,
     complete: false
   },
 
   {
     task: 'learn from Lambda',
-    id: Date.now(),
+    id: 3,
     complete: false
   },
 
@@ -51,13 +51,13 @@ class App extends React.Component {
   toggleTask = taskId => {
     this.setState({
       task: this.state.task.map(item =>
-        taskId === item.id ? {...item, complete: !item.complete} : item)
+        taskId === item.id ? {...item, complete: !item.complete} : {...item, complete: item.complete} )
     });
   };
 
   clearComplete = e => {
     this.setState({
-      task: this.state.task.filter(task => !task.complete === false)
+      task: this.state.task.filter(task => !task.complete)
     });
   };
 
@@ -66,7 +66,7 @@ class App extends React.Component {
       <div className="App">
           <div className='header'>
           <i className="fas fa-tasks"></i>
-            <h1>To Do List</h1>
+            <h1>Honey Do List</h1>
           </div>
           <div>
             <TodoForm addTask={this.addTask} />
